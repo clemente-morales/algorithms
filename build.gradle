@@ -1,0 +1,32 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+compileJava {
+  sourceCompatibility = '1.8'
+}
+version = '1.0'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Algorithms',
+                   'Implementation-Version': version
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+}
